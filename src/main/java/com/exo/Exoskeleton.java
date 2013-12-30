@@ -2,6 +2,10 @@ package com.exo;
 
 import java.util.logging.Logger;
 
+import com.edx.Localizer;
+import com.edx.allocator.Allocator;
+import com.edx.register.BlockRegistrar;
+import com.edx.register.ItemRegistrar;
 import com.exo.server.ServerProxy;
 
 import cpw.mods.fml.common.Mod;
@@ -19,6 +23,15 @@ public final class Exoskeleton{
 	public static Exoskeleton instance;
 	
 	public static final Logger LOGGER = Logger.getLogger(Exoskeleton.class.getSimpleName());
+	public static final Localizer LOCALIZER = new Localizer(Exoskeleton.class){
+		@Override
+		public String translate(String tag) {
+			return null;
+		}
+	};
+	public static final Allocator ALLOCATOR = new Allocator("Exoskeleton");
+	public static final BlockRegistrar BLOCK_REGISTRAR = new BlockRegistrar(LOCALIZER, Exoskeleton.class, ALLOCATOR);
+	public static final ItemRegistrar ITEM_REGISTRAR = new ItemRegistrar(LOCALIZER, Exoskeleton.class, ALLOCATOR);
 	
 	@SidedProxy(clientSide="com.exo.client.ClientProxy", serverSide="com.exo.server.ServerProxy")
 	public static ServerProxy proxy;
