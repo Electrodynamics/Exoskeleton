@@ -10,7 +10,10 @@ import net.minecraft.util.Icon;
 
 public final class ItemCrafting extends Item{
 	public static final String[] NAMES = new String[]{
-		
+		"fuse", "hinge", "metalGear",
+		"metalRod", "metalSheet", "padLock",
+		"reenforcedMetalSheet", "ringRod", "storageDrive",
+		"suspension", "valve"
 	};
 	
 	private Icon[] textures;

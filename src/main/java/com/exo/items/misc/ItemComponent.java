@@ -10,7 +10,10 @@ import net.minecraft.util.Icon;
 
 public final class ItemComponent extends Item{
 	public static final String[] NAMES = new String[]{
-		
+		"chestplate", "chestplateLeft", "chestplateRight",
+		"concusionCell", "joint", "powerCell",
+		"resistor", "shins", "supportBar",
+		"toes"
 	};
 	
 	private Icon[] textures;

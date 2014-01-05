@@ -4,8 +4,10 @@ import net.minecraft.block.Block;
 
 import com.exo.blocks.machine.BlockAssembler;
 import com.exo.blocks.machine.BlockConstructor;
+import com.exo.lib.helpers.LocalizationHelper;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public enum EXOBlocks{
 	INSTANCE;
@@ -23,10 +25,10 @@ public enum EXOBlocks{
 	}
 	
 	public void addNames(){
-		
+		this.name(BLOCK_ASSEMBLER, "assembler");
 	}
 	
 	private void name(Block b, String tag){
-		
+		LanguageRegistry.addName(b, LocalizationHelper.localize("block." + tag + ".name"));
 	}
 }
