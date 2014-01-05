@@ -2,10 +2,10 @@ package com.exo;
 
 import java.util.logging.Logger;
 
-import com.edx.Localizer;
-import com.edx.allocator.Allocator;
-import com.edx.register.BlockRegistrar;
-import com.edx.register.ItemRegistrar;
+import com.edx.edxcore.Localizer;
+import com.edx.edxcore.allocator.Allocator;
+import com.edx.edxcore.register.BlockRegistrar;
+import com.edx.edxcore.register.ItemRegistrar;
 import com.exo.server.ServerProxy;
 
 import cpw.mods.fml.common.Mod;

@@ -1,10 +1,13 @@
 # Ignore Everything
-*
+/*
+/*/
 
 # Don't Ignore These Files
-!.gitignore
-!LICENSE
-!README
-!build.gradle
-!build.properties
-!gradlew
+!/.gitignore
+!/gradlew
+!/README
+!/LICENSE
+!/build.properties
+!/build.gradle
+!/src/
+!/gradle/
