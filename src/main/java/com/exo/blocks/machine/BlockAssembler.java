@@ -9,6 +9,8 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 
+import com.exo.tiles.machine.TileAssembler;
+
 public class BlockAssembler extends BlockContainer{
 	public BlockAssembler(int id){
 		super(id, Material.iron);
@@ -53,6 +55,6 @@ public class BlockAssembler extends BlockContainer{
 	
 	@Override
 	public TileEntity createNewTileEntity(World world){
-		return null;
+		return new TileAssembler();
 	}
 }

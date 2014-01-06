@@ -9,6 +9,8 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 
+import com.exo.tiles.machine.TileConstructor;
+
 public final class BlockConstructor extends BlockContainer{
 	public BlockConstructor(int id){
 		super(id, Material.iron);
@@ -53,6 +55,6 @@ public final class BlockConstructor extends BlockContainer{
 	
 	@Override
 	public TileEntity createNewTileEntity(World world){
-		return null;
+		return new TileConstructor();
 	}
 }
