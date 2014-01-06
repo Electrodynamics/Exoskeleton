@@ -2,6 +2,8 @@ package com.exo.items.misc;
 
 import java.util.List;
 
+import com.exo.lib.tab.EXOTab;
+
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -22,6 +24,7 @@ public final class ItemComponent extends Item{
 		super(id);
 		this.setUnlocalizedName("exoItemComponent");
 		this.setHasSubtypes(true);
+		this.setCreativeTab(EXOTab.TAB_EXO);
 	}
 	
 	@Override

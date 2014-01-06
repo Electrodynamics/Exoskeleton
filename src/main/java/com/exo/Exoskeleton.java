@@ -5,6 +5,7 @@ import java.util.logging.Logger;
 import com.exo.blocks.EXOBlocks;
 import com.exo.client.ClientTickHandler;
 import com.exo.items.EXOItems;
+import com.exo.lib.handlers.EXOConfigHandler;
 import com.exo.lib.handlers.EXOGuiHandler;
 import com.exo.server.ServerPacketHandler;
 import com.exo.server.ServerProxy;
@@ -32,12 +33,18 @@ public final class Exoskeleton{
 	@SidedProxy(clientSide="com.exo.client.ClientProxy", serverSide="com.exo.server.ServerProxy")
 	public static ServerProxy proxy;
 	
+	public static EXOConfigHandler config;
+	
 	@Mod.EventHandler()
 	private void preInit(FMLPreInitializationEvent event){
 		LOGGER.info("Proxy Init");
 		proxy.init();
 		proxy.initRenders();
 		proxy.initTiles();
+		
+		LOGGER.info("Loading Configuration");
+		config = new EXOConfigHandler(event.getSuggestedConfigurationFile());
+		config.load();
 	}
 	
 	@Mod.EventHandler()
@@ -59,10 +66,10 @@ public final class Exoskeleton{
 	@Mod.EventHandler()
 	private void postInit(FMLPostInitializationEvent event){
 		LOGGER.info("Adding Block Names");
-		EXOItems.INSTANCE.addNames();
+		EXOBlocks.INSTANCE.addNames();
 		
 		LOGGER.info("Adding Item Names");
-		EXOBlocks.INSTANCE.addNames();
+		EXOItems.INSTANCE.addNames();
 	}
 	
 	@Mod.EventHandler()

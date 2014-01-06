@@ -5,7 +5,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.ForgeDirection;
 
 public class TileMachine extends TileEntity{
-	protected ForgeDirection rot;
+	protected ForgeDirection rot = ForgeDirection.NORTH;
 	
 	public void setRotation(ForgeDirection rot){
 		this.rot = rot;

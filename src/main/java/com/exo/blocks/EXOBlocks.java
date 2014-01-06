@@ -4,6 +4,8 @@ import net.minecraft.block.Block;
 
 import com.exo.blocks.machine.BlockAssembler;
 import com.exo.blocks.machine.BlockConstructor;
+import com.exo.blocks.misc.BlockDummy;
+import com.exo.lib.EXOSessionData;
 import com.exo.lib.helpers.LocalizationHelper;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -12,8 +14,9 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 public enum EXOBlocks{
 	INSTANCE;
 	
-	public static final Block BLOCK_ASSEMBLER = new BlockAssembler(3000);
-	public static final Block BLOCK_CONSTRUCTOR = new BlockConstructor(3001);
+	public static final Block BLOCK_ASSEMBLER = new BlockAssembler(EXOSessionData.BLOCK_ASSEMBLER_ID);
+	public static final Block BLOCK_CONSTRUCTOR = new BlockConstructor(EXOSessionData.BLOCK_CONSTRUCTOR_ID);
+	public static final Block BLOCK_DUMMY = new BlockDummy(EXOSessionData.BLOCK_DUMMY_ID);
 	
 	public void registerBlocks(){
 		this.register(BLOCK_ASSEMBLER);
@@ -26,6 +29,7 @@ public enum EXOBlocks{
 	
 	public void addNames(){
 		this.name(BLOCK_ASSEMBLER, "assembler");
+		this.name(BLOCK_CONSTRUCTOR, "constructor");
 	}
 	
 	private void name(Block b, String tag){

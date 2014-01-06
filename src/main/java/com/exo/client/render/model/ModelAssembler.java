@@ -134,7 +134,6 @@ public final class ModelAssembler extends ModelBase implements IModel {
 		hinge2.mirror = true;
 		setRotation(hinge2, 0F, 0F, 0F);
 		
-		lidRight.mirror = true;
 		lidRight = new ModelRenderer(this, 64, 0);
 		lidRight.addBox(0F, 1F, -12F, 1, 10, 11);
 		lidRight.setRotationPoint(6F, -4F, 6F);
@@ -142,7 +141,6 @@ public final class ModelAssembler extends ModelBase implements IModel {
 		lidRight.mirror = true;
 		setRotation(lidRight, 0F, 0F, 0F);
 		
-		lidRight.mirror = false;
 		lidTop = new ModelRenderer(this, 64, 21);
 		lidTop.addBox(0F, 0F, -13F, 14, 1, 13);
 		lidTop.setRotationPoint(-7F, -4F, 6F);
@@ -178,7 +176,6 @@ public final class ModelAssembler extends ModelBase implements IModel {
 		keypad.mirror = true;
 		setRotation(keypad, -0.6981317F, 0F, 0F);
 		
-		lidFrontR.mirror = true;
 		lidFrontR = new ModelRenderer(this, 56, 15);
 		lidFrontR.addBox(11F, 2F, -13F, 3, 7, 1);
 		lidFrontR.setRotationPoint(-7F, -4F, 6F);
@@ -186,7 +183,6 @@ public final class ModelAssembler extends ModelBase implements IModel {
 		lidFrontR.mirror = true;
 		setRotation(lidFrontR, 0F, 0F, 0F);
 		
-		lidFrontR.mirror = false;
 		lidFrontT = new ModelRenderer(this, 88, 0);
 		lidFrontT.addBox(0F, 1F, -13F, 14, 1, 1);
 		lidFrontT.setRotationPoint(-7F, -4F, 6F);

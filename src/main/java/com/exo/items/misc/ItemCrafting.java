@@ -8,6 +8,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 
+import com.exo.lib.tab.EXOTab;
+
 public final class ItemCrafting extends Item{
 	public static final String[] NAMES = new String[]{
 		"fuse", "hinge", "metalGear",
@@ -22,6 +24,7 @@ public final class ItemCrafting extends Item{
 		super(id);
 		this.setUnlocalizedName("exoItemCrafting");
 		this.setHasSubtypes(true);
+		this.setCreativeTab(EXOTab.TAB_EXO);
 	}
 	
 	@Override

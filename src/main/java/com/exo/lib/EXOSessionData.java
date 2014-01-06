@@ -5,4 +5,13 @@ public enum EXOSessionData{
 	
 	public static boolean DEBUG = true;
 	public static String CURRENT_LANG = "en_US";
+	
+	public static int BLOCK_CONSTRUCTOR_ID = 3000;
+	public static int BLOCK_ASSEMBLER_ID = 3001;
+	public static int BLOCK_DUMMY_ID = 3002;
+	public static int BLOCK_TOOLBOX_ID = 3003;
+	
+	public static int ITEM_CRAFTING_ID = 5000;
+	public static int ITEM_COMPONENT_ID = 5001;
+	public static int ITEM_TOOLBOX_ID = 5002;
 }

@@ -28,4 +28,7 @@ public final class EXOMetaData{
 	public static final int COMPONENT_SHINS_ID = 0x7;
 	public static final int COMPONENT_SUPPORT_BAR_ID = 0x8;
 	public static final int COMPONENT_TOES_ID = 0x9;
+	
+	public static final int TOOLBOX_DEFAULT_ID = 0x0;
+	public static final int TOOLBOX_RED_ID = 0x1;
 }

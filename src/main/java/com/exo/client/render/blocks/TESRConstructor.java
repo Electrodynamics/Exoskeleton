@@ -1,6 +1,10 @@
 package com.exo.client.render.blocks;
 
+import static org.lwjgl.opengl.GL11.GL_BLEND;
 import static org.lwjgl.opengl.GL11.GL_LIGHTING;
+import static org.lwjgl.opengl.GL11.GL_ONE_MINUS_SRC_ALPHA;
+import static org.lwjgl.opengl.GL11.GL_SRC_ALPHA;
+import static org.lwjgl.opengl.GL11.glBlendFunc;
 import static org.lwjgl.opengl.GL11.glDisable;
 import static org.lwjgl.opengl.GL11.glEnable;
 import static org.lwjgl.opengl.GL11.glPopMatrix;
@@ -27,6 +31,8 @@ public final class TESRConstructor extends TileEntitySpecialRenderer{
 		FMLClientHandler.instance().getClient().renderEngine.bindTexture(this.TEXTURE);
 		glPushMatrix();
 		glEnable(GL_LIGHTING);
+		glEnable(GL_BLEND);
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		RenderHelper.INSTANCE.translate(RenderHelper.INSTANCE.createBasicOffset(Vector3.of((float) x, (float) y, (float) z)));
 		RotationHelper.INSTANCE.rotate(180.0F, RotationHelper.X_MAG);
 		RotationHelper.INSTANCE.rotate_f(((TileConstructor) tile).getRotation(), RotationHelper.Y_MAG);
