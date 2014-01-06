@@ -21,7 +21,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public final class IIRAssembler implements IItemRenderer{
-	private final ResourceLocation TEXTURE = new ResourceLocation("exo", "");
+	private final ResourceLocation TEXTURE = new ResourceLocation("exo", "textures/blocks/assembler.png");
 	private final IModel model = new ModelAssembler();
 	
 	@Override

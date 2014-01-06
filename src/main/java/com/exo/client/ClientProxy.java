@@ -1,7 +1,12 @@
 package com.exo.client;
 
+import net.minecraftforge.client.MinecraftForgeClient;
+
+import com.exo.blocks.EXOBlocks;
 import com.exo.client.render.blocks.TESRAssembler;
 import com.exo.client.render.blocks.TESRConstructor;
+import com.exo.client.render.items.IIRAssembler;
+import com.exo.client.render.items.IIRConstructor;
 import com.exo.server.ServerProxy;
 import com.exo.tiles.machine.TileAssembler;
 import com.exo.tiles.machine.TileConstructor;
@@ -17,7 +22,8 @@ public final class ClientProxy extends ServerProxy{
 	
 	@Override
 	public void initRenders(){
-		
+		MinecraftForgeClient.registerItemRenderer(EXOBlocks.BLOCK_ASSEMBLER.blockID, new IIRAssembler());
+		MinecraftForgeClient.registerItemRenderer(EXOBlocks.BLOCK_CONSTRUCTOR.blockID, new IIRConstructor());
 	}
 	
 	@Override

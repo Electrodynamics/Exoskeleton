@@ -18,7 +18,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public final class IIRConstructor implements IItemRenderer{
 	private final IModel MODEL = new ModelConstructor();
-	private final ResourceLocation TEXTURE = new ResourceLocation("exo", "");
+	private final ResourceLocation TEXTURE = new ResourceLocation("exo", "textures/blocks/constructor.png");
 	
 	@Override
 	public boolean handleRenderType(ItemStack stack, ItemRenderType type) {

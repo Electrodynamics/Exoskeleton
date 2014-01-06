@@ -20,7 +20,7 @@ import cpw.mods.fml.client.FMLClientHandler;
 
 public final class TESRConstructor extends TileEntitySpecialRenderer{
 	private final IModel MODEL = new ModelConstructor();
-	private final ResourceLocation TEXTURE = new ResourceLocation("exo", "");
+	private final ResourceLocation TEXTURE = new ResourceLocation("exo", "textures/blocks/constructor.png");
 	
 	@Override
 	public void renderTileEntityAt(TileEntity tile, double x, double y, double z, float partial) {
