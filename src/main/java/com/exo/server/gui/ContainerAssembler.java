@@ -6,8 +6,10 @@ import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.InventoryCraftResult;
 import net.minecraft.inventory.Slot;
+import net.minecraft.item.ItemStack;
 
 import com.exo.inventory.InventoryAssembler;
+import com.exo.lib.handlers.EXORecipeHandler;
 import com.exo.tiles.machine.TileAssembler;
 
 public final class ContainerAssembler extends Container{
@@ -33,7 +35,14 @@ public final class ContainerAssembler extends Container{
 	
 	@Override
 	public void onCraftMatrixChanged(IInventory inventory){
+		ItemStack[] items = new ItemStack[9];
+		ItemStack cat = this.CRAFT_MATRIX.getStackInSlot(9);
 		
+		for(int i = 0; i < items.length; i++){
+			items[i] = this.CRAFT_MATRIX.getStackInSlot(i);
+		}
+		
+		this.CRAFT_RESULT.setInventorySlotContents(0, EXORecipeHandler.AssemblerRecipes.INSTANCE.getRecipe(items, cat).getRecipeOutput().copy());
 	}
 	
 	private void bindPlayerInventory(InventoryPlayer playerInv){

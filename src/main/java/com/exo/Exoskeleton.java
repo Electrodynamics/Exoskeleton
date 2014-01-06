@@ -7,6 +7,7 @@ import com.exo.client.ClientTickHandler;
 import com.exo.items.EXOItems;
 import com.exo.lib.handlers.EXOConfigHandler;
 import com.exo.lib.handlers.EXOGuiHandler;
+import com.exo.lib.handlers.EXORecipeHandler;
 import com.exo.server.ServerPacketHandler;
 import com.exo.server.ServerProxy;
 import com.exo.server.ServerTickHandler;
@@ -70,6 +71,9 @@ public final class Exoskeleton{
 		
 		LOGGER.info("Adding Item Names");
 		EXOItems.INSTANCE.addNames();
+		
+		LOGGER.info("ADding Recipes");
+		EXORecipeHandler.INSTANCE.addRecipes();
 	}
 	
 	@Mod.EventHandler()

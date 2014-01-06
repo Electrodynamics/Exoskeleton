@@ -7,7 +7,7 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 
 public final class InventoryToolbox implements IInventory{
-	private final int WIDTH = 0x0;
+	private final int WIDTH = 0xA;
 	private final ItemStack[] STACKS = new ItemStack[this.WIDTH];
 	private final Container PARENT;
 	
