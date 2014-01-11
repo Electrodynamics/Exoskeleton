@@ -16,7 +16,7 @@ public enum EXOItems{
 	
 	public static final Item ITEM_COMPONENT = new ItemComponent(EXOSessionData.ITEM_COMPONENT_ID);
 	public static final Item ITEM_CRAFTING = new ItemCrafting(EXOSessionData.ITEM_CRAFTING_ID);
-	
+
 	public void registerItems(){
 		this.register(ITEM_COMPONENT);
 		this.register(ITEM_CRAFTING);

@@ -13,7 +13,9 @@ import net.minecraftforge.client.IItemRenderer;
 
 import com.exo.client.render.IModel;
 import com.exo.client.render.model.ModelAssembler;
+import com.exo.lib.helpers.RenderHelper;
 import com.exo.lib.helpers.RotationHelper;
+import com.exo.lib.vector.Vector3;
 
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
@@ -22,7 +24,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public final class IIRAssembler implements IItemRenderer{
 	private final ResourceLocation TEXTURE = new ResourceLocation("exo", "textures/blocks/assembler.png");
-	private final IModel model = new ModelAssembler();
+	private final IModel MODEL = new ModelAssembler();
 	
 	@Override
 	public boolean handleRenderType(ItemStack stack, ItemRenderType type) {
@@ -43,9 +45,9 @@ public final class IIRAssembler implements IItemRenderer{
 				glPushMatrix();
 				glEnable(GL_LIGHTING);
 				glScalef(0.75F, 0.75F, 0.75F);
-				glTranslatef(0.0F, 0.65F, 0.0F);
+				RenderHelper.INSTANCE.translate(Vector3.of(0.0F, 0.65F, 0.0F));
 				RotationHelper.INSTANCE.rotate(180.0F, RotationHelper.X_MAG);
-				this.model.render();
+				this.MODEL.render();
 				glDisable(GL_LIGHTING);
 				glPopMatrix();
 				return;
@@ -55,9 +57,9 @@ public final class IIRAssembler implements IItemRenderer{
 				glPushMatrix();
 				glEnable(GL_LIGHTING);
 				glScalef(0.75F, 0.75F, 0.75F);
-				glTranslatef(0.0F, 0.65F, 0.0F);
+				RenderHelper.INSTANCE.translate(Vector3.of(0.0F, 0.65F, 0.0F));
 				RotationHelper.INSTANCE.rotate(180.0F, RotationHelper.X_MAG);
-				this.model.render();
+				this.MODEL.render();
 				glDisable(GL_LIGHTING);
 				glPopMatrix();
 				return;
@@ -67,9 +69,9 @@ public final class IIRAssembler implements IItemRenderer{
 				glPushMatrix();
 				glEnable(GL_LIGHTING);
 				glScalef(0.75F, 0.75F, 0.75F);
-				glTranslatef(0.0F, 0.65F, 0.0F);
+				RenderHelper.INSTANCE.translate(Vector3.of(0.0F, 0.65F, 0.0F));
 				RotationHelper.INSTANCE.rotate(180.0F, RotationHelper.X_MAG);
-				this.model.render();
+				this.MODEL.render();
 				glDisable(GL_LIGHTING);
 				glPopMatrix();
 				return;

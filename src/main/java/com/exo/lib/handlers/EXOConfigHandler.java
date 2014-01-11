@@ -21,8 +21,8 @@ public final class EXOConfigHandler{
 		EXOSessionData.BLOCK_DUMMY_ID = this.getBlock("Dummy", 3002);
 		EXOSessionData.BLOCK_TOOLBOX_ID = this.getBlock("Toolbox", 3003);
 		
-		EXOSessionData.ITEM_COMPONENT_ID = this.getItem("Components", 5000);
-		EXOSessionData.ITEM_CRAFTING_ID = this.getItem("Crafting", 5001);
+		EXOSessionData.ITEM_CRAFTING_ID = this.getItem("Crafting", 5000);
+		EXOSessionData.ITEM_COMPONENT_ID = this.getItem("Components", 5001);
 		EXOSessionData.ITEM_TOOLBOX_ID = this.getItem("Toolbox", 5002);
 		
 		this.CONFIG.save();

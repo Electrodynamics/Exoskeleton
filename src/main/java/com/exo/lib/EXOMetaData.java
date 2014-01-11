@@ -22,12 +22,13 @@ public final class EXOMetaData{
 	public static final int COMPONENT_CHESTPLATE_LEFT_ID = 0x1;
 	public static final int COMPONENT_CHESTPLATE_RIGHT_ID = 0x2;
 	public static final int COMPONENT_CONCUSSION_CELL_ID = 0x3;
-	public static final int COMPONENT_JOINT_ID = 0x4;
-	public static final int COMPONENT_POWER_CELL_ID = 0x5;
-	public static final int COMPONENT_RESISTOR_ID = 0x6;
-	public static final int COMPONENT_SHINS_ID = 0x7;
-	public static final int COMPONENT_SUPPORT_BAR_ID = 0x8;
-	public static final int COMPONENT_TOES_ID = 0x9;
+	public static final int COMPONENT_CORE_CONTAINMENT = 0x4;
+	public static final int COMPONENT_JOINT_ID = 0x5;
+	public static final int COMPONENT_POWER_CELL_ID = 0x6;
+	public static final int COMPONENT_RESISTOR_ID = 0x7;
+	public static final int COMPONENT_SHINS_ID = 0x8;
+	public static final int COMPONENT_SUPPORT_BAR_ID = 0x9;
+	public static final int COMPONENT_TOES_ID = 0xA;
 	
 	public static final int TOOLBOX_DEFAULT_ID = 0x0;
 	public static final int TOOLBOX_RED_ID = 0x1;
