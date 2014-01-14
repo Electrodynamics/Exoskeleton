@@ -72,7 +72,7 @@ public final class Exoskeleton{
 		LOGGER.info("Adding Item Names");
 		EXOItems.INSTANCE.addNames();
 		
-		LOGGER.info("ADding Recipes");
+		LOGGER.info("Adding Recipes");
 		EXORecipeHandler.INSTANCE.addRecipes();
 	}
 	
