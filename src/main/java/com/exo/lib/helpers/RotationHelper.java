@@ -49,17 +49,17 @@ public enum RotationHelper{
 	public float getWeight(int theta){
 		switch(theta)
 		{
-			case 2:{
-				return NORTH;
+			case 1:{
+				return EAST;
 			}
-			case 3:{
+			case 2:{
 				return SOUTH;
 			}
-			case 4:{
+			case 3:{
 				return WEST;
 			}
-			case 5:{
-				return EAST;
+			case 4:{
+				return SOUTH;
 			}
 			default:{
 				return NORTH;
