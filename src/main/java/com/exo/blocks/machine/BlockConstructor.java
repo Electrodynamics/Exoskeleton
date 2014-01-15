@@ -15,6 +15,7 @@ import com.exo.Exoskeleton;
 import com.exo.blocks.EXOBlocks;
 import com.exo.lib.EXOMetaData;
 import com.exo.lib.handlers.EXOGuiHandler;
+import com.exo.lib.helpers.RotationHelper;
 import com.exo.lib.tab.EXOTab;
 import com.exo.tiles.machine.TileConstructor;
 
@@ -27,8 +28,9 @@ public final class BlockConstructor extends BlockContainer{
 	}
 	
 	@Override
-	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase base, ItemStack stack){
+	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase living, ItemStack stack){
 		world.setBlock(x, y + 1, z, EXOBlocks.BLOCK_DUMMY.blockID, EXOMetaData.DUMMY_CONSTRUCTOR_ID, 2);
+		((TileConstructor) world.getBlockTileEntity(x, y, z)).setRotation(RotationHelper.INSTANCE.get3DRotation(living));
 	}
 	
 	@Override

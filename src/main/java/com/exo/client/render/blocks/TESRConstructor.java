@@ -35,7 +35,7 @@ public final class TESRConstructor extends TileEntitySpecialRenderer{
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		RenderHelper.INSTANCE.translate(RenderHelper.INSTANCE.createBasicOffset(Vector3.of((float) x, (float) y, (float) z)));
 		RotationHelper.INSTANCE.rotate(180.0F, RotationHelper.X_MAG);
-		RotationHelper.INSTANCE.rotate_f(((TileConstructor) tile).getRotation(), RotationHelper.Y_MAG);
+		RotationHelper.INSTANCE.rotate(((TileConstructor) tile).getRotation(), RotationHelper.Y_MAG);
 		this.MODEL.render();
 		glDisable(GL_LIGHTING);
 		glPopMatrix();

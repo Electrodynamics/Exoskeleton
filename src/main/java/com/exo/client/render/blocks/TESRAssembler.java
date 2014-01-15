@@ -35,7 +35,7 @@ public final class TESRAssembler extends TileEntitySpecialRenderer{
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		RenderHelper.INSTANCE.translate(RenderHelper.INSTANCE.createBasicOffset(Vector3.of((float) x, (float) y, (float) z)));
 		RotationHelper.INSTANCE.rotate(180.0F, RotationHelper.X_MAG);
-		RotationHelper.INSTANCE.rotate_f((((TileAssembler) tile).getRotation()), RotationHelper.Y_MAG);
+		RotationHelper.INSTANCE.rotate(((TileAssembler) tile).getRotation(), RotationHelper.Y_MAG);
 		this.model.render();
 		glDisable(GL_BLEND);
 		glDisable(GL_LIGHTING);

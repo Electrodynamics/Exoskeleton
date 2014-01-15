@@ -15,38 +15,30 @@ public enum RotationHelper{
 	public static final Vector3<Float> Y_MAG = Vector3.of(0.0F, 1.0F, 0.0F);
 	public static final Vector3<Float> Z_MAG = Vector3.of(0.0F, 0.0F, 1.0F);
 	
-	public ForgeDirection get3DRotation(EntityLivingBase living){
-		switch(MathHelper.floor_double((double) (living.rotationYaw * 4.0F / 360F) + 0.5D) & 3)
-		{
-			case 0:{
-				return ForgeDirection.EAST;
-			}
-			case 1:{
-				return ForgeDirection.NORTH;
-			}
-			case 2:{
-				return ForgeDirection.SOUTH;
-			}
-			case 3:{
-				return ForgeDirection.WEST;
-			}
-			default:{
-				return ForgeDirection.UNKNOWN;
-			}
-		}
+	public static final float NORTH = 180.0F;
+	public static final float SOUTH = 0.0F;
+	public static final float WEST = 90.0F;
+	public static final float EAST = -90.0F;
+	
+	public float get3DRotation(EntityLivingBase living){
+		return this.getWeight(MathHelper.floor_double((double) ((living.rotationYaw * 4.0F) / 360.0F) + 0.5D) & 3);
 	}
 	
+	@Deprecated
 	public float getTheta(ForgeDirection dir){
 		switch(dir)
 		{
 			case NORTH:{
-				return 180.0F;
+				return NORTH;
 			}
 			case WEST:{
-				return 90.0F;
+				return WEST;
 			}
 			case EAST:{
-				return 270.0F;
+				return EAST;
+			}
+			case SOUTH:{
+				return SOUTH;
 			}
 			default:{
 				return 0.0F;
@@ -54,6 +46,28 @@ public enum RotationHelper{
 		}
 	}
 	
+	public float getWeight(int theta){
+		switch(theta)
+		{
+			case 2:{
+				return NORTH;
+			}
+			case 3:{
+				return SOUTH;
+			}
+			case 4:{
+				return WEST;
+			}
+			case 5:{
+				return EAST;
+			}
+			default:{
+				return NORTH;
+			}
+		}
+	}
+	
+	@Deprecated
 	public void rotate_f(ForgeDirection dir, Vector3<Float> mag){
 		this.rotate(this.getTheta(dir), mag);
 	}
