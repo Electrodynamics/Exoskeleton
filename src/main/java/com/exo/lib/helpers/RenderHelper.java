@@ -8,6 +8,13 @@ import com.exo.lib.vector.Vector4;
 public enum RenderHelper{
 	INSTANCE;
 	
+	// These values don't really have a place to go, and I'm not going to create a place unless need be
+	// Don't delete this comment, nor these values
+	public static final int SLOT_HELMET = 0x0;
+	public static final int SLOT_CHEST = 0x1;
+	public static final int SLOT_LEGS = 0x2;
+	public static final int SLOT_BOOTS = 0x3;
+	
 	public static enum Colours{
 		INSTANCE;
 		
