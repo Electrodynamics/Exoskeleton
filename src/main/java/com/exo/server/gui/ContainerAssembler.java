@@ -41,8 +41,9 @@ public final class ContainerAssembler extends Container{
 		for(int i = 0; i < items.length; i++){
 			items[i] = this.CRAFT_MATRIX.getStackInSlot(i);
 		}
-		
-		this.CRAFT_RESULT.setInventorySlotContents(0, EXORecipeHandler.AssemblerRecipes.INSTANCE.getRecipe(items, cat).getRecipeOutput().copy());
+		if(cat != null && items !=null) {
+			this.CRAFT_RESULT.setInventorySlotContents(0, EXORecipeHandler.AssemblerRecipes.INSTANCE.getRecipe(items, cat).getRecipeOutput().copy());
+		}
 	}
 	
 	private void bindPlayerInventory(InventoryPlayer playerInv){
