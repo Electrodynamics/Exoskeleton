@@ -5,6 +5,7 @@ import net.minecraft.item.ItemStack;
 
 import com.exo.items.misc.ItemComponent;
 import com.exo.items.misc.ItemCrafting;
+import com.exo.items.misc.ItemIngot;
 import com.exo.lib.EXOSessionData;
 import com.exo.lib.helpers.LocalizationHelper;
 
@@ -16,10 +17,12 @@ public enum EXOItems{
 	
 	public static final Item ITEM_COMPONENT = new ItemComponent(EXOSessionData.ITEM_COMPONENT_ID);
 	public static final Item ITEM_CRAFTING = new ItemCrafting(EXOSessionData.ITEM_CRAFTING_ID);
-
+	public static final Item ITEM_INGOT = new ItemIngot(EXOSessionData.ITEM_INGOT_ID);
+	
 	public void registerItems(){
 		this.register(ITEM_COMPONENT);
 		this.register(ITEM_CRAFTING);
+		this.register(ITEM_INGOT);
 	}
 	
 	private void register(Item item){
@@ -33,6 +36,9 @@ public enum EXOItems{
 		}
 		for(i = 0; i < ItemComponent.NAMES.length; i++){
 			this.name(new ItemStack(ITEM_COMPONENT, 0, i), "component." + ItemComponent.NAMES[i]);
+		}
+		for(i = 0; i < ItemIngot.NAMES.length; i++){
+			this.name(new ItemStack(ITEM_INGOT, 0, i), "ingots." + ItemIngot.NAMES[i]);
 		}
 	}
 	

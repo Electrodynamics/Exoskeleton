@@ -14,4 +14,5 @@ public enum EXOSessionData{
 	public static int ITEM_CRAFTING_ID = 5000;
 	public static int ITEM_COMPONENT_ID = 5001;
 	public static int ITEM_TOOLBOX_ID = 5002;
+	public static int ITEM_INGOT_ID = 5003;
 }

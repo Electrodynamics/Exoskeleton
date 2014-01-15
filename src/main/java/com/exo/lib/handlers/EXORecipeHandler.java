@@ -6,6 +6,7 @@ import java.util.List;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.FurnaceRecipes;
 
 import com.exo.blocks.EXOBlocks;
 import com.exo.items.EXOItems;
@@ -91,15 +92,15 @@ public enum EXORecipeHandler{
 				'C', Item.compass, 
 				'S', getCrafting(EXOMetaData.CRAFTING_METAL_ROD_ID));
 
-//		GameRegistry.addShapedRecipe(getCrafting(EXOMetaData.CRAFTING_PIGIRON_ID), "CCC", "CIC", "CCC", 
-//				'C', Item.coal, 
-//				'I', Item.ingotIron); 
-//		
-//		FurnaceRecipes.smelting().addSmelting(EXOItems.ITEM_CRAFTING.itemID, EXOMetaData.CRAFTING_PIGIRON_ID, getCrafting(EXOMetaData.CRAFTING_PIGIRON_SMELTED_ID), 10);
-//		
-//		GameRegistry.addShapedRecipe(getCrafting(EXOMetaData.CRAFTING_METAL_SHEET_R_ID), "SSS", "PPP", "SSS", 
-//				'P', getCrafting(EXOMetaData.CRAFTING_PIGIRON_SMELTED_ID), 
-//				'S', getCrafting(EXOMetaData.CRAFTING_METAL_SHEET_ID)); 
+		GameRegistry.addShapedRecipe(getIngot(EXOMetaData.INGOT_PIGIRON_DIRTY_ID), "CCC", "CIC", "CCC", 
+				'C', Item.coal, 
+				'I', Item.ingotIron); 
+	
+		FurnaceRecipes.smelting().addSmelting(EXOItems.ITEM_INGOT.itemID, EXOMetaData.INGOT_PIGIRON_DIRTY_ID, getIngot(EXOMetaData.INGOT_PIGIRON_ID), 10);
+		
+		GameRegistry.addShapedRecipe(getCrafting(EXOMetaData.CRAFTING_METAL_SHEET_R_ID), "SSS", "PPP", "SSS", 
+				'P', getIngot(EXOMetaData.INGOT_PIGIRON_ID), 
+				'S', getCrafting(EXOMetaData.CRAFTING_METAL_SHEET_ID)); 
 		
 		GameRegistry.addShapedRecipe(getComponent(EXOMetaData.CRAFTING_SUSPENSION_ID), "SH ", " HS", "SH",
 				'H', getCrafting(EXOMetaData.CRAFTING_METAL_SHEET_R_ID),
@@ -149,6 +150,10 @@ public enum EXORecipeHandler{
 	
 	private ItemStack getComponent(int meta){
 	    return getItemStack(EXOItems.ITEM_COMPONENT, 1, meta);
+	}
+	
+	private ItemStack getIngot(int meta){
+	    return getItemStack(EXOItems.ITEM_INGOT, 1, meta);
 	}
 	
 	private ItemStack getItemStack(Item item, int quantity, int meta){
