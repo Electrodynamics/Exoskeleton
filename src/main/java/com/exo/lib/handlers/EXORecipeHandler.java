@@ -92,14 +92,14 @@ public enum EXORecipeHandler{
 				'C', Item.compass, 
 				'S', getCrafting(EXOMetaData.CRAFTING_METAL_ROD_ID));
 
-		GameRegistry.addShapedRecipe(getIngot(EXOMetaData.INGOT_PIGIRON_DIRTY_ID), "CCC", "CIC", "CCC", 
+		GameRegistry.addShapedRecipe(getIngot(EXOMetaData.INGOT_PIGIRON_ID), "CCC", "CIC", "CCC", 
 				'C', Item.coal, 
 				'I', Item.ingotIron); 
 	
-		FurnaceRecipes.smelting().addSmelting(EXOItems.ITEM_INGOT.itemID, EXOMetaData.INGOT_PIGIRON_DIRTY_ID, getIngot(EXOMetaData.INGOT_PIGIRON_ID), 10);
+		FurnaceRecipes.smelting().addSmelting(EXOItems.ITEM_INGOT.itemID, EXOMetaData.INGOT_PIGIRON_ID, getIngot(EXOMetaData.INGOT_SILVER_ID), 10);
 		
 		GameRegistry.addShapedRecipe(getCrafting(EXOMetaData.CRAFTING_METAL_SHEET_R_ID), "SSS", "PPP", "SSS", 
-				'P', getIngot(EXOMetaData.INGOT_PIGIRON_ID), 
+				'P', getIngot(EXOMetaData.INGOT_SILVER_ID), 
 				'S', getCrafting(EXOMetaData.CRAFTING_METAL_SHEET_ID)); 
 		
 		GameRegistry.addShapedRecipe(getComponent(EXOMetaData.CRAFTING_SUSPENSION_ID), "SH ", " HS", "SH",

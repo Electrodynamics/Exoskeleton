@@ -30,8 +30,8 @@ public final class EXOMetaData{
 	public static final int COMPONENT_SUPPORT_BAR_ID = 0x9;
 	public static final int COMPONENT_TOES_ID = 0xA;
 	
-	public static final int INGOT_PIGIRON_ID = 0x0;
-	public static final int INGOT_PIGIRON_DIRTY_ID = 0x1;
+	public static final int INGOT_SILVER_ID = 0x0;
+	public static final int INGOT_PIGIRON_ID = 0x1;
 	
 	public static final int TOOLBOX_DEFAULT_ID = 0x0;
 	public static final int TOOLBOX_RED_ID = 0x1;

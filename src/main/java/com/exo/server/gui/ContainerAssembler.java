@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 
 import com.exo.inventory.InventoryAssembler;
 import com.exo.lib.handlers.EXORecipeHandler;
+import com.exo.lib.recipe.AssemblerRecipe;
 import com.exo.tiles.machine.TileAssembler;
 
 public final class ContainerAssembler extends Container{
@@ -35,14 +36,19 @@ public final class ContainerAssembler extends Container{
 	
 	@Override
 	public void onCraftMatrixChanged(IInventory inventory){
+		this.CRAFT_RESULT.setInventorySlotContents(0, null);
 		ItemStack[] items = new ItemStack[9];
 		ItemStack cat = this.CRAFT_MATRIX.getStackInSlot(9);
 		
 		for(int i = 0; i < items.length; i++){
 			items[i] = this.CRAFT_MATRIX.getStackInSlot(i);
 		}
-		if(cat != null && items !=null) {
-			this.CRAFT_RESULT.setInventorySlotContents(0, EXORecipeHandler.AssemblerRecipes.INSTANCE.getRecipe(items, cat).getRecipeOutput().copy());
+		
+		if(cat != null && items !=null){
+			AssemblerRecipe output = EXORecipeHandler.AssemblerRecipes.INSTANCE.getRecipe(items, cat);
+			if(output != null){
+				this.CRAFT_RESULT.setInventorySlotContents(0, output.getRecipeOutput());
+			}
 		}
 	}
 	
@@ -62,4 +68,5 @@ public final class ContainerAssembler extends Container{
 	public boolean canInteractWith(EntityPlayer entityplayer) {
 		return true;
 	}
+	
 }
