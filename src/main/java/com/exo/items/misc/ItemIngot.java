@@ -12,7 +12,7 @@ import com.exo.lib.tab.EXOTab;
 
 public final class ItemIngot extends Item{
 	public static final String[] NAMES = new String[]{
-		"silver", "pigIron"
+		"steel", "pigIron"
 	};
 	
 	private Icon[] textures;
