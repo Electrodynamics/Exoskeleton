@@ -52,4 +52,7 @@ public final class AssemblerRecipe{
 	public ItemStack[] getItems(){
 		return this.items;
 	}
+	public ItemStack getCatylyst(){
+		return this.catylyst;
+	}
 }
