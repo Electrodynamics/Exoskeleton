@@ -18,13 +18,12 @@ import com.exo.client.render.model.ModelToolbox;
 import com.exo.lib.helpers.RenderHelper;
 import com.exo.lib.helpers.RotationHelper;
 import com.exo.lib.vector.Vector3;
-import com.exo.tiles.TileToolBox;
 
 import cpw.mods.fml.client.FMLClientHandler;
 
 public final class TESRToolbox extends TileEntitySpecialRenderer{
 	private final IModel MODEL = new ModelToolbox();
-	private final ResourceLocation TEXTURE = new ResourceLocation("exo", "");
+	private final ResourceLocation TEXTURE = new ResourceLocation("exo", "textures/blocks/toolbox.png");
 	
 	@Override
 	public void renderTileEntityAt(TileEntity tile, double x, double y, double z, float partial) {
@@ -35,7 +34,6 @@ public final class TESRToolbox extends TileEntitySpecialRenderer{
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		RenderHelper.INSTANCE.translate(RenderHelper.INSTANCE.createBasicOffset(Vector3.of((float) x, (float) y, (float) z)));
 		RotationHelper.INSTANCE.rotate(180.0F, RotationHelper.X_MAG);
-		RotationHelper.INSTANCE.rotate(((TileToolBox) tile).getRotation(), RotationHelper.Y_MAG);
 		this.MODEL.render();
 		glDisable(GL_BLEND);
 		glDisable(GL_LIGHTING);

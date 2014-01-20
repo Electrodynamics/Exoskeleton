@@ -17,14 +17,12 @@ public class TileMachine extends TileEntity{
 	@Override
 	public void readFromNBT(NBTTagCompound comp){
 		super.readFromNBT(comp);
-
 		comp.setFloat("rot", this.rot);
 	}
 	
 	@Override
 	public void writeToNBT(NBTTagCompound comp){
 		super.writeToNBT(comp);
-		
 		this.rot = comp.getFloat("rot");
 	}
 }

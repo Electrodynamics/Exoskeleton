@@ -3,6 +3,12 @@ package com.exo.lib;
 public final class EXOMetaData{
 	private EXOMetaData(){}
 	
+	// This is not meant for here, but has nowheres to go
+	// DON'T delete
+	public static final int BLOCK_UPDATE = 0x1;
+	public static final int BLOCK_SEND_CLIENT = 0x2;
+	public static final int BLOCK_DONT_RENDER = 0x4;
+	
 	public static final int CRAFTING_FUSE_ID = 0x0;
 	public static final int CRAFTING_HINGE_ID = 0x1;
 	public static final int CRAFTING_METAL_GEAR_ID = 0x2;

@@ -12,6 +12,7 @@ import cpw.mods.fml.common.network.IGuiHandler;
 public final class EXOGuiHandler implements IGuiHandler{
 	public static final int GUI_ASSEMBLER = 0x1;
 	public static final int GUI_CONSTRUCTOR = 0x2;
+	public static final int GUI_TOOLBOX = 0x3;
 	
 	@Override
 	public Object getServerGuiElement(int id, EntityPlayer player, World world, int x, int y, int z){

@@ -3,6 +3,7 @@ package com.exo.blocks.misc;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
@@ -31,6 +32,11 @@ public final class BlockDummy extends Block{
 				break;
 			}
 		}
+	}
+	
+	@Override
+	public Icon getIcon(int side, int meta){
+		return Block.blockIron.getIcon(side, meta);
 	}
 	
 	@Override

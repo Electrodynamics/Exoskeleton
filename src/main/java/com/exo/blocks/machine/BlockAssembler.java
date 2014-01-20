@@ -2,6 +2,7 @@ package com.exo.blocks.machine;
 
 import java.util.Random;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLivingBase;
@@ -45,8 +46,13 @@ public class BlockAssembler extends BlockContainer{
 	}
 	
 	@Override
+	public int idDropped(int i, Random rand, int j){
+		return EXOBlocks.BLOCK_ASSEMBLER.blockID;
+	}
+	
+	@Override
 	public Icon getIcon(int side, int meta){
-		return this.blockIcon;
+		return Block.blockIron.getIcon(side, meta);
 	}
 	
 	@Override

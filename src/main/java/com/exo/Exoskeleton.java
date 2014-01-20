@@ -4,6 +4,7 @@ import java.util.logging.Logger;
 
 import com.exo.blocks.EXOBlocks;
 import com.exo.client.ClientTickHandler;
+import com.exo.cmd.EXOCommand;
 import com.exo.items.EXOItems;
 import com.exo.lib.handlers.EXOConfigHandler;
 import com.exo.lib.handlers.EXOGuiHandler;
@@ -78,6 +79,6 @@ public final class Exoskeleton{
 	
 	@Mod.EventHandler()
 	private void serverStarting(FMLServerStartingEvent event){
-		
+		event.registerServerCommand(new EXOCommand());
 	}
 }

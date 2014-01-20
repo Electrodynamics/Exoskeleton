@@ -6,6 +6,7 @@ import net.minecraftforge.common.ForgeDirection;
 
 import org.lwjgl.opengl.GL11;
 
+import com.exo.Exoskeleton;
 import com.exo.lib.vector.Vector3;
 
 public enum RotationHelper{
@@ -46,23 +47,24 @@ public enum RotationHelper{
 		}
 	}
 	
+	@SuppressWarnings("fallthrough")
 	public float getWeight(int theta){
 		switch(theta)
 		{
-			case 2:{
+			case 0:{
 				return NORTH;
 			}
-			case 3:{
-				return SOUTH;
-			}
-			case 4:{
-				return WEST;
-			}
-			case 5:{
+			case 1:{
 				return EAST;
 			}
+			case 2:{
+				return SOUTH;
+			}
+			case 3:{
+				return WEST;
+			}
 			default:{
-				return NORTH;
+				return 0.0F;
 			}
 		}
 	}
