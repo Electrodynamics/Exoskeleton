@@ -38,11 +38,7 @@ public final class InventoryAssembler implements IInventory{
 	
 	@Override
 	public ItemStack getStackInSlot(int slot){
-		if(slot > this.getSizeInventory()){
-			return null;
-		} else{
-			return this.STACKS[slot];
-		}
+		return this.STACKS[slot];
 	}
 	
 	@Override
@@ -57,10 +53,10 @@ public final class InventoryAssembler implements IInventory{
 	
 	@Override
 	public ItemStack getStackInSlotOnClosing(int slot){
-		if(this.STACKS[slot] != null){
-			ItemStack stack = this.STACKS[slot];
-			this.STACKS[slot] = null;
-			return stack;
+		if (this.STACKS[slot] != null){
+			ItemStack itemstack = this.STACKS[slot];
+	        this.STACKS[slot] = null;
+	        return itemstack;
 		} else{
 			return null;
 		}
@@ -68,32 +64,42 @@ public final class InventoryAssembler implements IInventory{
 	
 	@Override
 	public ItemStack decrStackSize(int slot, int amount){
-		if(this.STACKS[slot] != null){
-			ItemStack stack = null;
-			
-			if(this.STACKS[slot].stackSize <= amount){
-				stack = this.STACKS[slot];
-				this.PARENT.onCraftMatrixChanged(this);
-				return stack;
-			} else{
-				stack = this.STACKS[slot].splitStack(amount);
-				
-				if(this.STACKS[slot].stackSize == 0){
-					this.STACKS[slot] = null;
-				}
-				
-				this.PARENT.onCraftMatrixChanged(this);
-				return stack;
-			}
-		} else{
-			return null;
-		}
+		if (this.STACKS[slot] != null){
+            ItemStack itemstack;
+
+            if (this.STACKS[slot].stackSize <= amount){
+                itemstack = this.STACKS[slot];
+                this.STACKS[slot] = null;
+                this.onInventoryChanged();
+                return itemstack;
+            } else{
+                itemstack = this.STACKS[slot].splitStack(amount);
+
+                if (this.STACKS[slot].stackSize == 0){
+                    this.STACKS[slot] = null;
+                }
+
+                this.onInventoryChanged();
+                return itemstack;
+            }
+        } else{
+            return null;
+        }
+	}
+	@Override
+	public void onInventoryChanged(){
+		this.PARENT.onCraftMatrixChanged(this);
 	}
 	
 	@Override
-	public void setInventorySlotContents(int slot, ItemStack stack){
+	public void setInventorySlotContents(int slot, ItemStack stack) {
 		this.STACKS[slot] = stack;
-		this.PARENT.onCraftMatrixChanged(this);
+
+		if (stack != null && stack.stackSize > this.getInventoryStackLimit()) {
+			stack.stackSize = this.getInventoryStackLimit();
+		}
+
+		this.onInventoryChanged();
 	}
 	
 	@Override
@@ -106,7 +112,6 @@ public final class InventoryAssembler implements IInventory{
 		return true;
 	}
 	
-	@Override public void onInventoryChanged(){}
 	@Override public void openChest(){}
 	@Override public void closeChest(){}
 }

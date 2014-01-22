@@ -42,36 +42,30 @@ public final class IIRAssembler implements IItemRenderer{
 			case ENTITY:{
 				FMLClientHandler.instance().getClient().renderEngine.bindTexture(this.TEXTURE);
 				glPushMatrix();
-				glEnable(GL_LIGHTING);
 				glScalef(0.75F, 0.75F, 0.75F);
 				RenderHelper.INSTANCE.translate(Vector3.of(0.0F, 0.65F, 0.0F));
 				RotationHelper.INSTANCE.rotate(180.0F, RotationHelper.X_MAG);
 				this.MODEL.render();
-				glDisable(GL_LIGHTING);
 				glPopMatrix();
 				return;
 			}
 			case EQUIPPED:{
 				FMLClientHandler.instance().getClient().renderEngine.bindTexture(this.TEXTURE);
 				glPushMatrix();
-				glEnable(GL_LIGHTING);
 				glScalef(0.75F, 0.75F, 0.75F);
 				RenderHelper.INSTANCE.translate(Vector3.of(0.0F, 0.65F, 0.0F));
 				RotationHelper.INSTANCE.rotate(180.0F, RotationHelper.X_MAG);
 				this.MODEL.render();
-				glDisable(GL_LIGHTING);
 				glPopMatrix();
 				return;
 			}
 			case INVENTORY:{
 				FMLClientHandler.instance().getClient().renderEngine.bindTexture(this.TEXTURE);
 				glPushMatrix();
-				glEnable(GL_LIGHTING);
 				glScalef(0.75F, 0.75F, 0.75F);
 				RenderHelper.INSTANCE.translate(Vector3.of(0.0F, 0.65F, 0.0F));
 				RotationHelper.INSTANCE.rotate(180.0F, RotationHelper.X_MAG);
 				this.MODEL.render();
-				glDisable(GL_LIGHTING);
 				glPopMatrix();
 				return;
 			}

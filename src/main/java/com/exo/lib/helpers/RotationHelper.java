@@ -50,11 +50,27 @@ public enum RotationHelper{
 	public float getWeight(int theta){
 		switch(theta)
 		{
+<<<<<<< HEAD
 			case 0:{
 				return NORTH;
-			}
+=======
 			case 1:{
 				return EAST;
+>>>>>>> branch 'master' of https://github.com/Electrodynamics/Exoskeleton
+			}
+<<<<<<< HEAD
+			case 1:{
+				return EAST;
+=======
+			case 2:{
+				return SOUTH;
+			}
+			case 3:{
+				return WEST;
+			}
+			case 4:{
+				return SOUTH;
+>>>>>>> branch 'master' of https://github.com/Electrodynamics/Exoskeleton
 			}
 			case 2:{
 				return SOUTH;

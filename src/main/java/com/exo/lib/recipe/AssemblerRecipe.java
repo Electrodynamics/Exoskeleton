@@ -13,7 +13,6 @@ public final class AssemblerRecipe{
 		this.output = output;
 	}
 	
-	@SuppressWarnings("unused")
 	public boolean matches(ItemStack[] items, ItemStack catylyst){
 		for(int i = 0; i < this.items.length; i++){
 			if((this.items[i] != null) && (items[i] == null)){
@@ -27,7 +26,7 @@ public final class AssemblerRecipe{
 			if((this.items[i].itemID == items[i].itemID)){
 				if((this.items[i].getItemDamage() == items[i].getItemDamage())){
 					if((this.items[i].stackSize <= items[i].stackSize)){
-						return true;
+						continue;
 					} else{
 						return false;
 					}
@@ -48,5 +47,12 @@ public final class AssemblerRecipe{
 	
 	public ItemStack getRecipeOutput(){
 		return this.output;
+	}
+	
+	public ItemStack[] getItems(){
+		return this.items;
+	}
+	public ItemStack getCatylyst(){
+		return this.catylyst;
 	}
 }

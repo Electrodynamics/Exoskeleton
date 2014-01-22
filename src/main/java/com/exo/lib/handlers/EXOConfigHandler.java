@@ -24,7 +24,7 @@ public final class EXOConfigHandler{
 		EXOSessionData.ITEM_CRAFTING_ID = this.getItem("Crafting", 5000);
 		EXOSessionData.ITEM_COMPONENT_ID = this.getItem("Components", 5001);
 		EXOSessionData.ITEM_TOOLBOX_ID = this.getItem("Toolbox", 5002);
-		
+		EXOSessionData.ITEM_INGOT_ID = this.getItem("Ingots", 5003);
 		this.CONFIG.save();
 	}
 	
