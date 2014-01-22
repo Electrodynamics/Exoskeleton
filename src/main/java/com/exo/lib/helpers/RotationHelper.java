@@ -6,7 +6,6 @@ import net.minecraftforge.common.ForgeDirection;
 
 import org.lwjgl.opengl.GL11;
 
-import com.exo.Exoskeleton;
 import com.exo.lib.vector.Vector3;
 
 public enum RotationHelper{
