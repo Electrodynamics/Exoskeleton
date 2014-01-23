@@ -18,7 +18,6 @@ import com.exo.client.render.model.ModelAssembler;
 import com.exo.lib.helpers.RenderHelper;
 import com.exo.lib.helpers.RotationHelper;
 import com.exo.lib.vector.Vector3;
-import com.exo.tiles.TileMachine;
 import com.exo.tiles.machine.TileAssembler;
 
 import cpw.mods.fml.client.FMLClientHandler;
